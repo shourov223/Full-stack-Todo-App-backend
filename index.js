@@ -28,7 +28,10 @@ const runMongo = async () => {
         const collection = db.collection("Todo collection");
 
         app.get("/", (req, res) => {
-            console.log("backend server is running")
+            res.status(200).json({
+                success: true,
+                message: "Server is running"
+            })
         })
 
         app.post("/add-task", async (req, res) => {
