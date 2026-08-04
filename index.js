@@ -14,7 +14,10 @@ dns.setServers(["8.8.8.8", "1.1.1.1"]);
 dns.setDefaultResultOrder("ipv4first");
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://full-stack-todo-app-frontend-omega.vercel.app/",
+    credentials: true
+}));
 
 const client = new MongoClient(mongoUri);
 
